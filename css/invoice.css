@@ -4,7 +4,6 @@
 		text-align:center;
 		color:#777;
 		background:#f9f9f9;
-		direction:rtl;
 	}
 	body h1{
 		font-weight:300;
@@ -36,7 +35,7 @@
 	.invoice-box table{
 		width:100%;
 		line-height:inherit;
-		text-align: right;
+		text-align:left;
 	}
 	.invoice-box table td{
 		padding:5px;

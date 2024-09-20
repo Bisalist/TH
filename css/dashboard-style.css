@@ -249,6 +249,9 @@ section.main-dashboard-sec {
 	float:left;
 	border-bottom:1px solid #eee;
 }
+.user-profile-menu li ul {
+	display:none;
+}
 .user-profile-menu li a {
 	font-weight:600;
     color: #7d93b2;
@@ -267,8 +270,11 @@ section.main-dashboard-sec {
 	bottom:0;
 	width:10px;
 }
-.user-profile-menu li a.user-profile-act , .user-profile-menu li a:hover {
+.user-profile-menu li a.user-profile-act , .user-profile-menu li a:hover  , .user-profile-menu li.submenu-act a , .user-profile-menu li.submenu-act ul li a:hover{
 	background:#f9f9f9;
+}
+.user-profile-menu li.submenu-act ul li a {
+	background:#fff;
 }
 .user-profile-menu li:first-child {
 	border-top:1px solid #eee;
@@ -333,6 +339,56 @@ section.main-dashboard-sec {
     font-weight: 600;
     font-size: 21px;
 	color: #566985;
+}
+.dashboard-title .onoffswitch {
+	position: absolute;
+	right: 0;
+	top: 0;
+ 
+}
+.dashboard-title .onoffswitch-switch {
+	height: 21px;
+	top: 1px;
+}
+.dashboard-title .onoffswitch-inner:before {
+	padding-left: 0;
+}
+.add_room-item {
+    padding: 20px 50px 0 0;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+}
+.profile-edit-container .add_room-item:first-child {
+    padding-top: 0;
+    margin-top: 0;
+    border: none;
+	padding-right: 0;
+}
+.remove-rp {
+	position: absolute;
+	right: 0;
+	top: 50px;
+	z-index: 10;
+	height: 24px;
+	line-height: 24px;
+	cursor: pointer;
+	font-size: 24px;
+	color:#4DB7FE;
+}
+.profile-edit-container  .add_room-item:first-child .remove-rp {
+	display: none;
+}
+.add-room-item {
+    float: left;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 1px solid #eee;
+    background: #f9f9f9;
+    border-radius: 4px;
+    color: #566985;
 }
 .dt-inbox {
 	margin:10px 0 30px;
