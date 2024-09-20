@@ -13,7 +13,6 @@
         <link type="text/css" rel="stylesheet" href="css/plugins.css">
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link type="text/css" rel="stylesheet" href="css/dashboard-style.css">
-        <link type="text/css" rel="stylesheet" href="css/rtl-style.css">
         <link type="text/css" rel="stylesheet" href="css/color.css">
         <!--=============== favicons ===============-->
         <link rel="shortcut icon" href="images/favicon.ico">
@@ -275,7 +274,7 @@
                                     </div>
                                     <div class="dashboard-header-stats-wrap">
                                         <div class="dashboard-header-stats">
-                                            <div class="swiper-container" dir="rtl">
+                                            <div class="swiper-container">
                                                 <div class="swiper-wrapper">
                                                     <!--  dashboard-header-stats-item -->
                                                     <div class="swiper-slide">
@@ -367,6 +366,15 @@
                                                 <li><a href="dashboard-myprofile.html"><i class="fal fa-user-edit"></i> Edit profile</a></li>
                                                 <li><a href="dashboard-messages.html"><i class="fal fa-envelope"></i> Messages <span>3</span></a></li>
                                                 <li><a href="dashboard-password.html"><i class="fal fa-key"></i>Change Password</a></li>
+                                                <li>
+                                                    <a href="#" class="submenu-link"><i class="fal fa-plus"></i>Submenu</a>
+                                                    <ul  class="no-list-style">
+                                                        <li><a href="#"><i class="fal fa-th-list"></i> Submenu 2 </a></li>
+                                                        <li><a href="#"> <i class="fal fa-calendar-check"></i> Submenu 2</a></li>
+                                                        <li><a href="#"><i class="fal fa-comments-alt"></i>Submenu 2</a></li>
+                                                        <li><a href="#"><i class="fal fa-file-plus"></i> Submenu 2</a></li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </div>
                                         <!-- user-profile-menu end-->
@@ -378,6 +386,15 @@
                                                 <li><a href="dashboard-bookings.html"> <i class="fal fa-calendar-check"></i> Bookings <span>2</span></a></li>
                                                 <li><a href="dashboard-review.html"><i class="fal fa-comments-alt"></i> Reviews </a></li>
                                                 <li><a href="dashboard-add-listing.html" class="user-profile-act"><i class="fal fa-file-plus"></i> Add New</a></li>
+                                                <li>
+                                                    <a href="#" class="submenu-link"><i class="fal fa-plus"></i>Submenu</a>
+                                                    <ul  class="no-list-style">
+                                                        <li><a href="#"><i class="fal fa-th-list"></i> Submenu 2 </a></li>
+                                                        <li><a href="#"> <i class="fal fa-calendar-check"></i> Submenu 2</a></li>
+                                                        <li><a href="#"><i class="fal fa-comments-alt"></i>Submenu 2</a></li>
+                                                        <li><a href="#"><i class="fal fa-file-plus"></i> Submenu 2</a></li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </div>
                                         <!-- user-profile-menu end-->                                        
@@ -561,6 +578,122 @@
                                 </div>
                                 <!-- profile-edit-container end-->
                                 <div class="dashboard-title  dt-inbox fl-wrap">
+                                    <h3>Details Item - Menu</h3>
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch11" checked>
+                                        <label class="onoffswitch-label" for="myonoffswitch11">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- profile-edit-container--> 
+                                <div class="profile-edit-container fl-wrap  block_box">
+                                    <div class="custom-form add_room-item-wrap">
+                                        <div class="add_room-container fl-wrap">
+                                            <!--add_room-item end  -->
+                                            <div class="add_room-item fl-wrap">
+                                                <span class="remove-rp tolt" data-microtip-position="left"  data-tooltip="Remove"><i class="fal fa-times-circle"></i></span>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <label>Item Title <i class="fal fa-briefcase"></i></label>
+                                                        <input type="text" placeholder="Title" value=""/>										
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label>Item Category<i class="fal fa-filter"></i></label>
+                                                        <input type="text" placeholder="Category" value=""/>										
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label>Item Price<i class="fal fa-dollar-sign"></i></label>
+                                                        <input type="text" placeholder="Price" value=""/>										
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <label>Item Details</label>
+                                                        <textarea cols="40" rows="3" placeholder="Datails"></textarea> 											
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label>Item Image</label>
+                                                        <div class="add-list-media-wrap">
+                                                            <div class="listsearch-input-item fl-wrap">
+                                                                <div class="fuzone">
+                                                                    <form>
+                                                                        <div class="fu-text">
+                                                                            <span><i class="fal fa-images"></i> Click here or drop files to upload</span>
+                                                                            <div class="photoUpload-files fl-wrap"></div>
+                                                                        </div>
+                                                                        <input type="file" class="upload">
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--add_room-item end  -->
+                                        </div>
+                                        <a href="#" class="add-room-item">Add New <i class="fal fa-plus"></i> </a>
+                                    </div>
+                                </div>
+                                <!-- profile-edit-container end-->								
+                                <div class="dashboard-title  dt-inbox fl-wrap">
+                                    <h3>Details Item - Rooms</h3>
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch21">
+                                        <label class="onoffswitch-label" for="myonoffswitch11">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- profile-edit-container--> 
+                                <div class="profile-edit-container fl-wrap  block_box">
+                                    <div class="custom-form add_room-item-wrap">
+                                        <div class="add_room-container fl-wrap">
+                                            <!--add_room-item end  -->
+                                            <div class="add_room-item fl-wrap">
+                                                <span class="remove-rp tolt" data-microtip-position="left"  data-tooltip="Remove"><i class="fal fa-times-circle"></i></span>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <label>Item Title <i class="fal fa-briefcase"></i></label>
+                                                        <input type="text" placeholder="Title" value=""/>										
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label>Item Subtitle<i class="fal fa-filter"></i></label>
+                                                        <input type="text" placeholder="Subtitle" value=""/>										
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label>Item Price<i class="fal fa-dollar-sign"></i></label>
+                                                        <input type="text" placeholder="Price" value=""/>										
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <label>Item Details</label>
+                                                        <textarea cols="40" rows="3" placeholder="Datails"></textarea> 											
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label>Item Image</label>
+                                                        <div class="add-list-media-wrap">
+                                                            <div class="listsearch-input-item fl-wrap">
+                                                                <div class="fuzone">
+                                                                    <form>
+                                                                        <div class="fu-text">
+                                                                            <span><i class="fal fa-images"></i> Click here or drop files to upload</span>
+                                                                            <div class="photoUpload-files fl-wrap"></div>
+                                                                        </div>
+                                                                        <input type="file" class="upload">
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--add_room-item end  -->
+                                        </div>
+                                        <a href="#" class="add-room-item">Add New <i class="fal fa-plus"></i> </a>
+                                    </div>
+                                </div>
+                                <!-- profile-edit-container end-->								
+                                <div class="dashboard-title  dt-inbox fl-wrap">
                                     <h3>Facilities</h3>
                                 </div>
                                 <!-- profile-edit-container--> 
@@ -685,7 +818,46 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- profile-edit-container end-->                                      
+                                <!-- profile-edit-container end-->                                
+                                <div class="dashboard-title  dt-inbox fl-wrap">
+                                    <h3>Working Hours</h3>
+                                </div>
+                                <!-- profile-edit-container--> 
+                                <div class="profile-edit-container fl-wrap block_box">
+                                    <div class="custom-form">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <label>Monday <i class="fal fa-clock"></i></label>
+                                                <input type="text" placeholder="9 AM - 5 PM" value=""/>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>Tuesday <i class="fal fa-clock"></i></label>
+                                                <input type="text" placeholder="9 AM - 5 PM" value=""/>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>Wednesday <i class="fal fa-clock"></i></label>
+                                                <input type="text" placeholder="9 AM - 5 PM" value=""/>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>Thursday <i class="fal fa-clock"></i></label>
+                                                <input type="text" placeholder="9 AM - 5 PM" value=""/>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>Friday <i class="fal fa-clock"></i></label>
+                                                <input type="text" placeholder="9 AM - 5 PM" value=""/>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>Saturday <i class="fal fa-clock"></i></label>
+                                                <input type="text" placeholder="9 AM - 3 PM" value=""/>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>Sunday <i class="fal fa-clock"></i></label>
+                                                <input type="text" placeholder="Closed" value=""/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- profile-edit-container end-->                                                                                                       
                                 <div class="dashboard-title  dt-inbox fl-wrap">
                                     <h3>Sidebar Widgets</h3>
                                 </div>
@@ -851,7 +1023,7 @@
                                                 </div>
                                             </li>
                                         </ul>
-                                        <a href="blog.html" class="footer-link"><i class="fal fa-long-arrow-left"></i> Read all</a>
+                                        <a href="blog.html" class="footer-link">Read all <i class="fal fa-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -887,20 +1059,20 @@
                 <div class="sub-footer  fl-wrap">
                     <div class="container">
                         <div class="copyright"> &#169; Townhub 2019 .  All rights reserved.</div>
+                        <div class="lang-wrap">
+                            <div class="show-lang"><span><i class="fal fa-globe-europe"></i><strong>En</strong></span><i class="fa fa-caret-down arrlan"></i></div>
+                            <ul class="lang-tooltip lang-action no-list-style">
+                                <li><a href="#" class="current-lan" data-lantext="En">English</a></li>
+                                <li><a href="#" data-lantext="Fr">Français</a></li>
+                                <li><a href="#" data-lantext="Es">Español</a></li>
+                                <li><a href="#" data-lantext="De">Deutsch</a></li>
+                            </ul>
+                        </div>
                         <div class="subfooter-nav">
                             <ul class="no-list-style">
                                 <li><a href="#">Terms of use</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                                 <li><a href="#">Blog</a></li>
-                            </ul>
-                        </div>
-                        <div class="lang-wrap">
-                            <div class="show-lang"><span><i class="fal fa-globe-europe"></i><strong>En</strong></span><i class="fa fa-caret-down arrlan"></i></div>
-                            <ul class="lang-tooltip lang-action no-list-style">
-                                <li><a href="#" class="current-lan" data-lantext="En">English</a></li>
-                                <li><a href="#" data-lantext="Fr">Franais</a></li>
-                                <li><a href="#" data-lantext="Es">Espaol</a></li>
-                                <li><a href="#" data-lantext="De">Deutsch</a></li>
                             </ul>
                         </div>
                     </div>

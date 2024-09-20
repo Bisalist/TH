@@ -12,7 +12,7 @@ function initTowhub() {
     a.each(function (a) {
         if ($(this).attr("data-bg")) $(this).css("background-image", "url(" + $(this).data("bg") + ")");
     });
-    //   swiper ------------------	
+    //   swiper ------------------
     if ($(".listing-slider").length > 0) {
         var lsw = new Swiper(".listing-slider .swiper-container", {
             preloadImages: false,
@@ -29,8 +29,8 @@ function initTowhub() {
                 dynamicBullets: true,
             },
             navigation: {
-                nextEl: '.listing-carousel-button-prev2',
-                prevEl: '.listing-carousel-button-next2',
+                nextEl: '.listing-carousel-button-next2',
+                prevEl: '.listing-carousel-button-prev2',
             },
             breakpoints: {
                 1650: {
@@ -48,7 +48,7 @@ function initTowhub() {
     if ($(".category-carousel").length > 0) {
         var j2 = new Swiper(".category-carousel .swiper-container", {
             preloadImages: false,
-            freeMode: false,
+            freeMode: true,
             slidesPerView: 'auto',
             spaceBetween: 10,
             loop: false,
@@ -56,10 +56,13 @@ function initTowhub() {
             mousewheel: true,
             observer: true,
             observeParents: true,
- 
+            scrollbar: {
+                el: '.hs_init',
+                draggable: true,
+            },
             navigation: {
-                nextEl: '.cc-prev',
-                prevEl: '.cc-next',
+                nextEl: '.cc-next',
+                prevEl: '.cc-prev',
             },
         });
     }
@@ -75,8 +78,8 @@ function initTowhub() {
             observer: true,
             observeParents: true,
             navigation: {
-                nextEl: '.sc-prev',
-                prevEl: '.sc-next',
+                nextEl: '.sc-next',
+                prevEl: '.sc-prev',
             },
         });
     }
@@ -94,18 +97,18 @@ function initTowhub() {
                 clickable: true,
             },
             navigation: {
-                nextEl: '.ss-slider-cont-prev',
-                prevEl: '.ss-slider-cont-next',
+                nextEl: '.ss-slider-cont-next',
+                prevEl: '.ss-slider-cont-prev',
             },
         });
     }
     if ($(".listing-carousel").length > 0) {
         var j3 = new Swiper(".listing-carousel .swiper-container", {
-            preloadImages: false,
+            preloadImages: true,
             loop: true,
             grabCursor: true,
             speed: 1400,
-
+            init: false,
             slidesPerView: 'auto',
             spaceBetween: 0,
             effect: "slide",
@@ -115,10 +118,11 @@ function initTowhub() {
                 clickable: true,
             },
             navigation: {
-                nextEl: '.listing-carousel-button-prev',
-                prevEl: '.listing-carousel-button-next',
+                nextEl: '.listing-carousel-button-next',
+                prevEl: '.listing-carousel-button-prev',
             },
         });
+		j3.init();
     }
     if ($(".slider-widget").length > 0) {
         var j4 = new Swiper(".slider-widget .swiper-container", {
@@ -149,8 +153,8 @@ function initTowhub() {
             },
 
             navigation: {
-                nextEl: '.slider-hero-button-prev',
-                prevEl: '.slider-hero-button-next',
+                nextEl: '.slider-hero-button-next',
+                prevEl: '.slider-hero-button-prev',
             },
         });
 
@@ -197,8 +201,8 @@ function initTowhub() {
             grabCursor: true,
             mousewheel: false,
             navigation: {
-                nextEl: '.cc-prev',
-                prevEl: '.cc-next',
+                nextEl: '.cc-next',
+                prevEl: '.cc-prev',
             },
             breakpoints: {
                 1064: {
@@ -228,8 +232,8 @@ function initTowhub() {
                 dynamicBullets: true,
             },
             navigation: {
-                nextEl: '.listing-carousel-button-prev',
-                prevEl: '.listing-carousel-button-next',
+                nextEl: '.listing-carousel-button-next',
+                prevEl: '.listing-carousel-button-prev',
             },
             breakpoints: {
                 1064: {
@@ -252,8 +256,8 @@ function initTowhub() {
             mousewheel: false,
 
             navigation: {
-                nextEl: '.dhs-prev',
-                prevEl: '.dhs-next',
+                nextEl: '.dhs-next',
+                prevEl: '.dhs-prev',
             },
             breakpoints: {
                 768: {
@@ -265,33 +269,12 @@ function initTowhub() {
             }
         });
     }
-    //   instagram ------------------	
-    var actoket = $('#insta-content').data("instatoken");
-    var token = actoket,
-        num_photos = 6;
-    $.ajax({
-        url: 'https://api.instagram.com/v1/users/self/media/recent',
-        dataType: 'jsonp',
-        type: 'GET',
-        data: {
-            access_token: token,
-            count: num_photos
-        },
-        success: function (data) {
-            for (x in data.data) {
-                $('#insta-content').append('<a target="_blank" href="' + data.data[x].link + '"><img src="' + data.data[x].images.low_resolution.url + '"></a>');
-            }
-        },
-        error: function (data) {
-            console.log(data);
-        }
-    });
     //   Isotope------------------
     function initIsotope() {
         if ($(".gallery-items").length) {
             var ami = $(".gallery-items").isotope({
                 singleMode: true,
-				isOriginLeft: false,
+
                 itemSelector: ".gallery-item, .gallery-item-second, .gallery-item-three",
                 transformsEnabled: true,
                 transitionDuration: "700ms",
@@ -356,7 +339,7 @@ function initTowhub() {
                 dynamic: true,
                 dynamicEl: dynamicgal,
                 download: false,
-                loop: true,
+                loop: false,
                 counter: false
             });
 
@@ -403,7 +386,13 @@ function initTowhub() {
         e.preventDefault();
         $(".show-more-snopt-tooltip").toggleClass("show-more-snopt-tooltip_vis");
     });
- 
+ // calc ------------------
+    $("form[name=rangeCalc]").jAutoCalc("destroy");
+    $("form[name=rangeCalc]").jAutoCalc({
+        initFire: true,
+        decimalPlaces: 1,
+        emptyAsZero: false
+    });
  // date picker------------------
     $('input[name="datepicker-here"]').daterangepicker({
         autoUpdateInput: false,
@@ -524,7 +513,7 @@ function initTowhub() {
     //   mailchimp------------------
     $("#subscribe").ajaxChimp({
         language: "eng",
-        url: "http://kwst.us18.list-manage.com/subscribe/post?u=42df802713d4826a4b137cd9e&id=815d11e811"
+        url: "https://gmail.us1.list-manage.com/subscribe/post?u=1fe818378d5c129b210719d80&amp;id=a2792f681b"
     });
     $.ajaxChimp.translations.eng = {
         submit: "Submitting...",
@@ -555,7 +544,7 @@ function initTowhub() {
     bvc.append('<iframe src="//player.vimeo.com/video/' + w + '?background=1"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>');
     $(".video-holder").height(bvmc.height());
     if ($(window).width() > 1024) {
-        if ($(".video-holder").lenght > 0)
+        if ($(".video-holder").length > 0)
             if (bvmc.height() / 9 * 16 > bvmc.width()) {
                 bvfc.height(bvmc.height()).width(bvmc.height() / 9 * 16);
                 bvfc.css({
@@ -731,7 +720,30 @@ function initTowhub() {
     $(".show-list-wrap-search").on("click", function (e) {
         $(".lws_mobile").slideToggle(400);
         $(this).toggleClass("slsw_vis");
-
+    });
+	$(".show-lpt").on("click", function (e) {
+		e.preventDefault();
+        $(".lost-password-tootip").addClass("lpt_vis");
+    });
+	$(".close-lpt").on("click", function () {
+        $(".lost-password-tootip").removeClass("lpt_vis");
+    });
+ 
+	//   Uplaod ------------------
+	$('.fuzone input').each(function () {
+		$(this).on('change', function () {
+			var pufzone = $(this).parents(".fuzone").find('.photoUpload-files');
+			pufzone.empty();
+			var files = $(this)[0].files;
+			for (var i = 0; i < files.length; i++) {
+				$("<span></span>").text(files[i].name).appendTo(pufzone);
+			}
+		});
+	});
+    $(".submenu-link").on("click", function (ef) {
+        ef.preventDefault();
+        $(this).toggleClass("sl_tog");
+        $(this).parent("li").find("ul").slideToggle(300);
     });
     $(".eye").on("click touchstart", function () {
         var epi = $(this).parent(".pass-input-wrap").find("input");
@@ -763,7 +775,7 @@ function initTowhub() {
     });
 // booking -----------------
     var current_fs, next_fs, previous_fs;
-    var right, opacity, scale;
+    var left, opacity, scale;
     var animating;
     $(".next-form").on("click", function (e) {
         e.preventDefault();
@@ -778,14 +790,14 @@ function initTowhub() {
         }, {
             step: function (now, mx) {
                 scale = 1 - (1 - now) * 0.2;
-                right = (now * 50) + "%";
+                left = (now * 50) + "%";
                 opacity = 1 - now;
                 current_fs.css({
                     'transform': 'scale(' + scale + ')',
                     'position': 'absolute'
                 });
                 next_fs.css({
-                    'right': right,
+                    'left': left,
                     'opacity': opacity,
                     'position': 'relative'
                 });
@@ -811,10 +823,10 @@ function initTowhub() {
         }, {
             step: function (now, mx) {
                 scale = 0.8 + (1 - now) * 0.2;
-                right = ((1 - now) * 50) + "%";
+                left = ((1 - now) * 50) + "%";
                 opacity = 1 - now;
                 current_fs.css({
-                    'right': right,
+                    'left': left,
                     'position': 'absolute'
                 });
                 previous_fs.css({
@@ -949,64 +961,21 @@ function initTowhub() {
     });
     $('.chosen-select').niceSelect();
 // rangeslider -----------------
-	 function fixPosition(slider, fromPercent) {
-	  var w;
-	
-	  if (fromPercent === 100) {
-		w = "calc(100% - 14px)";
-	  } else {
-		w = "calc(" + fromPercent + "% - 6px)";
-	  }
-	
-	  slider.find(".irs-bar").css("left", "auto").css("width", w);
-	  slider.find(".irs-slider").css("left", "auto").css("right", w);
-	}
     $(".range-slider").ionRangeSlider({
         type: "double",
-        keyboard: true,
+        keyboard: true
     });
- 
     $(".rate-range").ionRangeSlider({
         type: "single",
         hide_min_max: true,
-        values: [
-            1,2 ,3 , 4, 5
-        ],
-		
     });
- // calc ------------------
-    $("form[name=rangeCalc]").jAutoCalc("destroy");
-    $("form[name=rangeCalc]").jAutoCalc({
-        initFire: true,
-        decimalPlaces: 1,
-        emptyAsZero: false
-    });	
-	
-  var min2 = "$";
-  var max2 = "$$$$";	
-	
-	
-	
-	
     $(".price-range").ionRangeSlider({
         type: "single",
+
         values: [
             "$", "$$", "$$$", "$$$$"
         ],
-		
-		onStart: function (data) {
-		  fixPosition(data.slider, 0);
-		},
-		onChange: function (data) {
-		  data.from = min2 + (max2 - data.from);
-		  data.from_percent = 100 - data.from_percent;
-		  fixPosition(data.slider, data.from_percent);
-		},
-		prettify: function (num) {
-		  num = min2 + (max2 - num);
-		  return num;
-		},
-     });
+    });
 //click -----------------
     $('.toggle-filter-btn').on("click", function (e) {
         e.preventDefault();
@@ -1017,22 +986,6 @@ function initTowhub() {
     });
     $('.init-dsmen').on("click", function () {
         $(".user-profile-menu-wrap").slideToggle(400);
-    });
-	//   Uplaod ------------------
-	$('.fuzone input').each(function () {
-		$(this).on('change', function () {
-			var pufzone = $(this).parents(".fuzone").find('.photoUpload-files');
-			pufzone.empty();
-			var files = $(this)[0].files;
-			for (var i = 0; i < files.length; i++) {
-				$("<span></span>").text(files[i].name).appendTo(pufzone);
-			}
-		});
-	});
-    $(".submenu-link").on("click", function (ef) {
-        ef.preventDefault();
-        $(this).toggleClass("sl_tog");
-        $(this).parent("li").find("ul").slideToggle(300);
     });
 // chat -----------------
     var chatwidwrap = $(".chat-widget_wrap"),
@@ -1080,7 +1033,7 @@ function initTowhub() {
     });
     function mobMenuInit() {
         var ww = $(window).width();
-        if (ww < 1064) {
+        if (ww < 1054) {
             $(".menusb").remove();
             $(".main-menu").removeClass("nav-holder");
             $(".main-menu nav").clone().addClass("menusb").appendTo(".main-menu");
@@ -1273,11 +1226,39 @@ function cardRaining2() {
     $("<span class='card-popup-rainingvis_bg_item'></span>").duplicate(5).prependTo(".card-popup-rainingvis_bg");
 }
 cardRaining2();
+//   Dashboard ------------------
+$('.add-room-item').on('click', function (e) {
+    e.preventDefault();
+    var newElem = $(this).parents(".add_room-item-wrap").find('.add_room-item').first().clone(),
+        parclone = $(this).parents(".add_room-item-wrap").find(".add_room-container");
+    newElem.find('input').val('');
+    newElem.appendTo(parclone);
+    $('.fuzone input').each(function () {
 
+        $(this).on('change', function () {
+
+            var pufzone = $(this).parents(".fuzone").find('.photoUpload-files');
+            pufzone.empty();
+            var files = $(this)[0].files;
+            for (var i = 0; i < files.length; i++) {
+
+                $("<span></span>").text(files[i].name).appendTo(pufzone);
+
+            }
+
+        });
+    });
+    $(".remove-rp").on('click', function () {
+        $(this).parents(".add_room-item:not(:first-child)").remove();
+    });
+});
+$(".remove-rp").on('click', function () {
+    $(this).parents(".add_room-item").remove();
+});
 //  geo -----------------
 $(".location a , .loc-act").on("click", function (e) {
     e.preventDefault();
-    $.get("http://ipinfo.io", function (response) {
+    $.get("https://ipinfo.io", function (response) {
         $(".location input").each(function () {
             $(this).val(response.city);
         });
